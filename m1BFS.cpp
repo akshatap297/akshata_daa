@@ -1,14 +1,14 @@
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;queue&gt;
+#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-int main() {
+int main()
+{
     int n, m;
     cin >> n >> m;  
     int g[n][100];    
     int deg[n] = {0};  
-    for(int i = 0; i < m; i++) {
+    for(int i = 0; i < m; i++) 
+    {
         int u, v;
         cin >> u >> v; 
         g[u][deg[u]++] = v;
@@ -23,12 +23,15 @@ int main() {
     visited[source] = 1;
     queue[rear++] = source;
    cout << "BFS Traversal: ";
-    while(front < rear) {
+    while(front < rear)
+        {
         int u = queue[front++];
         cout << u << " ";
-        for(int i = 0; i < deg[u]; i++) {
+        for(int i = 0; i < deg[u]; i++) 
+        {
             int v = g[u][i];
-            if(!visited[v]) {
+            if(!visited[v])
+            {
                 visited[v] = 1;
                 queue[rear++] = v;
             }
