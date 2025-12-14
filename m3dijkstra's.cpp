@@ -1,6 +1,4 @@
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;queue&gt;
+#include <iostream>
 using namespace std;
 #define MAXN 100
 #define INF 1000000000
