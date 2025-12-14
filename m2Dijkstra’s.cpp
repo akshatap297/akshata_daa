@@ -1,6 +1,4 @@
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;queue&gt;
+#include <iostream>
 using namespace std;
 #define MAXN 100
 #define INF 1e9
@@ -25,11 +23,14 @@ int main() {
     for (int i = 0; i < n; i++)
         dist[i] = INF;
     dist[source] = 0;  
-    for (int count = 0; count < n; count++) {
+    for (int count = 0; count < n; count++)
+        {
         int u = -1;
         int minDist = INF; 
-        for (int i = 0; i < n; i++) {
-            if (!visited[i] && dist[i] < minDist) {
+        for (int i = 0; i < n; i++)
+            {
+            if (!visited[i] && dist[i] < minDist)
+            {
                 minDist = dist[i];
                 u = i;
             }
@@ -38,8 +39,10 @@ int main() {
         if (u == -1) 
           break; 
         visited[u] = 1;
-        for (int v = 0; v < n; v++) {
-            if (!visited[v] && cost[u][v] != INF) {
+        for (int v = 0; v < n; v++) 
+        {
+            if (!visited[v] && cost[u][v] != INF)
+            {
                 if (dist[u] + cost[u][v] < dist[v])
                     dist[v] = dist[u] + cost[u][v];
             }
