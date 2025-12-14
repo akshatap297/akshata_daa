@@ -1,5 +1,4 @@
-#include &lt;iostream&gt;
-#include &lt;queue&gt;
+#include <iostream>
 using namespace std;
 int main() {
     int s[3] = {5, 2, 8};
