@@ -1,5 +1,5 @@
-#include &lt;iostream&gt;
-#include &lt;queue&gt;
+#include <iostream>
+#include <queue>
 using namespace std;
 int main() {
     string cars[3] = {"CAR1", "CAR2", "CAR3"};
