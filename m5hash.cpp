@@ -1,5 +1,5 @@
-#include &lt;iostream&gt;
-#include &lt;unordered_map&gt;
+#include <iostream>
+#include <string.h>
 using namespace std;
 int main() {
     string roads[] = {"RoadA", "RoadB"};
