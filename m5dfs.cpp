@@ -1,4 +1,4 @@
-#include &lt;iostream&gt;
+#include <iostream>
 using namespace std;
 int v = 5;
 int m[10][10] = {{0,1,1,0,0}, {1,0,0,1,1},
