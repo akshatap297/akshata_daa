@@ -1,4 +1,4 @@
-#include &lt;bits/stdc++.h&gt;
+#include <bits/stdc++.h>
 using namespace std;
 #define MAXN 100
 #define INF 999
