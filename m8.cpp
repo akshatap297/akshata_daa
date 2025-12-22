@@ -1,16 +1,17 @@
+// Algorithm: Kruskal’s (Minimum Spanning Tree) | Data Structures: Graph, Array, Disjoint Set
 #include <iostream>
 using namespace std;
 
 int parent[20];
 
-int find(int x)
+int findSet(int x)
 {
     while (parent[x] != x)
         x = parent[x];
     return x;
 }
 
-void merge(int a, int b)
+void unionSet(int a, int b)
 {
     parent[a] = b;
 }
@@ -18,57 +19,58 @@ void merge(int a, int b)
 int main()
 {
     int n, e;
-    int u[20], v[20], w[20];
+    int u[20], v[20], cost[20];
 
-    cout << "Enter number of locations: ";
+    cout << "Enter number of industrial locations: ";
     cin >> n;
 
-    cout << "Enter number of corridors: ";
+    cout << "Enter number of possible corridors: ";
     cin >> e;
 
-    cout << "Enter source destination cost:\n";
+    cout << "Enter source destination and construction cost:\n";
     for (int i = 0; i < e; i++)
-        cin >> u[i] >> v[i] >> w[i];
+        cin >> u[i] >> v[i] >> cost[i];
 
     for (int i = 0; i < n; i++)
         parent[i] = i;
 
-    int count = 0;
-    int total = 0;
+    int edgesUsed = 0;
+    int totalCost = 0;
 
-    cout << "\nSelected corridors:\n";
+    cout << "\nDedicated Industrial Transport Corridors:\n";
 
-    while (count < n - 1)
+    while (edgesUsed < n - 1)
     {
         int min = 9999;
-        int a = -1, b = -1, k = -1;
+        int a = -1, b = -1, pos = -1;
 
         for (int i = 0; i < e; i++)
         {
-            if (w[i] < min)
+            if (cost[i] < min)
             {
-                min = w[i];
+                min = cost[i];
                 a = u[i];
                 b = v[i];
-                k = i;
+                pos = i;
             }
         }
 
-        int x = find(a);
-        int y = find(b);
+        int x = findSet(a);
+        int y = findSet(b);
 
         if (x != y)
         {
-            cout << a << " - " << b << "  cost = " << min << endl;
-            total += min;
-            merge(x, y);
-            count++;
+            cout << a << " - " << b << "  Cost = " << min << endl;
+            totalCost += min;
+            unionSet(x, y);
+            edgesUsed++;
         }
 
-        w[k] = 9999;
+        cost[pos] = 9999;
     }
 
-    cout << "\nMinimum construction cost = " << total << endl;
+    cout << "\nMinimum infrastructure cost = " << totalCost << endl;
+    cout << "Heavy vehicles restricted to these corridors only.\n";
 
     return 0;
 }
